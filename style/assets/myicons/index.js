@@ -1,0 +1,1 @@
+export { faMalt } from "./fa-malt"
