@@ -5,6 +5,7 @@ import { useTheme } from 'next-themes'
 
 function Topbar() {
     const { theme } = useTheme()
+
     return (
         <TopbarContainer>
             <Content>
@@ -20,10 +21,18 @@ export default Topbar
 
 const TopbarContainer = styled.div`
     display: flex;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-color: transparent;
-    width: 100%;
+    backdrop-filter: blur(5px);
 `
 
 const Content = styled.div`

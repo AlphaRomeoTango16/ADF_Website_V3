@@ -1,7 +1,9 @@
 import styled from 'styled-components'
 import { useTranslation } from 'react-i18next';
+import { useTheme } from 'next-themes'
 
 function LanguageButton() {
+    const { theme } = useTheme()
     const { i18n } = useTranslation();
     const changeLanguage = (lng) => {
         i18n.changeLanguage(lng);
@@ -9,8 +11,8 @@ function LanguageButton() {
 
     return (
         <SelectButton>
-            <ButtonFr onClick={() => changeLanguage('fr')}>FR 🇫🇷</ButtonFr>
-            <ButtonEn onClick={() => changeLanguage('en')}>EN 🇬🇧</ButtonEn>
+            <ButtonFr isDarkMode={theme === 'dark'} onClick={() => changeLanguage('fr')}>FR 🇫🇷</ButtonFr>
+            <ButtonEn isDarkMode={theme === 'dark'} onClick={() => changeLanguage('en')}>EN 🇬🇧</ButtonEn>
         </SelectButton>
     )
 }
@@ -19,9 +21,7 @@ export default LanguageButton
 
 const SelectButton = styled.div`
     display: flex;
-    justify-content: flex-end;
     font-size: 15px;
-    width: 200px;
 `
 
 const ButtonFr = styled.button`
@@ -29,6 +29,10 @@ const ButtonFr = styled.button`
     border-width: 1px;
     border-style: solid;
     cursor: pointer;
+    background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'white'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'black'};
 `
 
 const ButtonEn = styled.button`
@@ -36,4 +40,8 @@ const ButtonEn = styled.button`
     border-width: 1px;
     border-style: solid;
     cursor: pointer;
+    background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
 `

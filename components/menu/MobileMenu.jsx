@@ -39,27 +39,29 @@ function MobileMenu() {
                 <div isdarkmode={theme === 'dark'} />
             </MenuButton>
             <NavLine isDarkMode={theme === 'dark'} isOpen={sideBar === true}>
-                <Link href="/">
-                    <LinkContent>
-                        <Number>01</Number><Line /><Title>Home</Title>
-                    </LinkContent>
-                </Link>
-                <Link href="/work">
-                    <LinkContent>
-                        <Number>02</Number><Line /><Title>Work</Title>
-                    </LinkContent>
-                </Link>
-                <Link href="/about">
-                    <LinkContent>
-                        <Number>03</Number><Line /><Title>About</Title>
-                    </LinkContent>
-                </Link>
-                <Link href="/contact">
-                    <LinkContent>
-                        <Number>04</Number><Line /><Title>Contact</Title>
-                    </LinkContent>
-                </Link>
-                <LanguageButtons />
+                <Content>
+                    <Link href="/">
+                        <LinkContent>
+                            <Number>01</Number><Line isDarkMode={theme === 'dark'} /><Title>Home</Title>
+                        </LinkContent>
+                    </Link>
+                    <Link href="/work">
+                        <LinkContent>
+                            <Number>02</Number><Line isDarkMode={theme === 'dark'} /><Title>Work</Title>
+                        </LinkContent>
+                    </Link>
+                    <Link href="/about">
+                        <LinkContent>
+                            <Number>03</Number><Line isDarkMode={theme === 'dark'} /><Title>About</Title>
+                        </LinkContent>
+                    </Link>
+                    <Link href="/contact">
+                        <LinkContent>
+                            <Number>04</Number><Line isDarkMode={theme === 'dark'} /><Title>Contact</Title>
+                        </LinkContent>
+                    </Link>
+                    <LanguageButtons />
+                </Content>
             </NavLine>
         </>
     )
@@ -108,24 +110,26 @@ const MenuButton = styled.div`
     }
 `
 const NavLine = styled.nav`
-    width: 50%;
     display: flex;
-    padding: 20px;
-    z-index: 5;
-    align-item: center;
-    justify-content: space-between;
-    flex-direction: column;
+    z-index: -1;
     background-color: ${({ isDarkMode }) =>
         isDarkMode ? 'black' : 'white'};
-    justify-content: flex-start;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     left: 0;
-    top: 0;
+    top: 0px;
     bottom: 0;
     position: fixed;
     transition: transform 0.5s ease-in-out;
     transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-101%)"};
+`
+
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: flex-start;
+    margin-top: 90px;
 `
 
 const LinkContent = styled.div`
@@ -137,7 +141,8 @@ const LinkContent = styled.div`
 `
 
 const Line = styled.div`
-    background-color: black;
+    background-color: ${({ isDarkMode }) =>
+        isDarkMode ? 'white' : 'black'};
     width: 1px;
     height: 30px;
     margin-left: 20px;
