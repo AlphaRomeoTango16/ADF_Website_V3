@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes'
 import '../style/style.css'
 
@@ -37,4 +38,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default appWithTranslation(MyApp)

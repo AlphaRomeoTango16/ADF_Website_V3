@@ -13,7 +13,7 @@ function Stack({ title, content }) {
                     {title}
                     <DeployButton />
                 </Title>
-                <Line />
+                <Line isOpen={informations === true} />
             </StackTitle>
             <ContentContainer>
                 <StackIcon isOpen={informations === true}>
@@ -36,11 +36,22 @@ const StackContainer = styled.div`
     flex-direction: column;
 `
 
+const Line = styled.div`
+    background-color: black;
+    width: ${({ isOpen }) => isOpen ? "100%" : "0%"};
+    height: 1px;
+`
+
 const StackTitle = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     cursor: pointer;
+    :hover{
+        ${Line} {
+            transition: all 0.3s linear;
+            width: 100%;
+    }
 `
 
 const Title = styled.h3`
@@ -48,15 +59,6 @@ const Title = styled.h3`
     justify-content: space-between;
     font-family: Raleway;
     font-weight: bold;
-`
-
-const Line = styled.div`
-    background-color: black;
-    width: 0%;
-    height: 1px;
-    :hover {
-        width: 100%;
-    }
 `
 
 const ContentContainer = styled.div`

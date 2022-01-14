@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Topbar from '../components/topbar/Topbar'
 import Footer from '../components/footer/Footer'
+import Head from 'next/head'
 
 import { dom, library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -15,6 +16,9 @@ dom.watch();
 export default function About() {
   return (
     <Page>
+      <Head>
+        <title>| About</title>
+      </Head>
       <Topbar />
       <Body>
         <Title>Fullstack developer</Title>

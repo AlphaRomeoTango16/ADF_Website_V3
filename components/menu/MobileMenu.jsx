@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { useState, useRef, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
+import LanguageButtons from '../button/LanguageButtons'
 
 function MobileMenu() {
     const { theme } = useTheme()
@@ -58,6 +59,7 @@ function MobileMenu() {
                         <Number>04</Number><Line /><Title>Contact</Title>
                     </LinkContent>
                 </Link>
+                <LanguageButtons />
             </NavLine>
         </>
     )
