@@ -7,15 +7,15 @@ function Footer() {
 
     return (
         <FooterContainer>
-            <Line isDarkMode={theme === 'dark'} />
+            <Line isdarkmode={theme === 'dark'} />
             <LabelSwitch onChange={() => theme === 'dark' ? setTheme('light') : setTheme('dark')}>
                 <InputSwitch type="checkbox" />
-                <SliderSwitch isDarkMode={theme === 'dark'} data-fa-icon={theme === 'light' ? "" : ""}></SliderSwitch>
+                <SliderSwitch isdarkmode={theme === 'dark'} data-fa-icon={theme === 'light' ? "" : ""}></SliderSwitch>
             </LabelSwitch>
             <LogoContainer>
-                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LinkedInIcon icon={['fab', 'linkedin']} isDarkMode={theme === 'dark'} style={styleIcon} title="LinkedIn" /></IconMe>
-                <IconMe href="https://github.com/AlphaRomeoTango16"><GitHubIcon icon={['fab', 'github']} isDarkMode={theme === 'dark'} style={styleIcon} title="GitHub" /></IconMe>
-                <IconMe href="https://www.malt.fr/profile/ardellafaille"><MaltIcon icon={['fab', 'malt']} isDarkMode={theme === 'dark'} style={styleIcon} title="Malt" /></IconMe>
+                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LinkedInIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn" /></IconMe>
+                <IconMe href="https://github.com/AlphaRomeoTango16"><GitHubIcon icon={['fab', 'github']} style={styleIcon} title="GitHub" /></IconMe>
+                <IconMe href="https://www.malt.fr/profile/ardellafaille"><MaltIcon icon={['fab', 'malt']} style={styleIcon} title="Malt" /></IconMe>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>
@@ -35,8 +35,8 @@ const Line = styled.div`
     padding-top: 20px;
     width: 100%;
     border-top: 1px solid;
-    border-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    border-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
 `
 
 const CopyrightLine = styled.div`
@@ -77,8 +77,8 @@ const SliderSwitch = styled.span`
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+        background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
         font-size: 15px;
         font-family: "Font Awesome 5 Free";
         font-weight: 500;
@@ -114,8 +114,8 @@ const IconMe = styled.a`
 
 const LinkedInIcon = styled(FontAwesomeIcon)`
     transition: all 0.5s;
-    color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     &:hover{
         transform: translateY(-5px);
         color: #0B65C2;
@@ -124,8 +124,8 @@ const LinkedInIcon = styled(FontAwesomeIcon)`
 
 const GitHubIcon = styled(FontAwesomeIcon)`
     transition: all 0.5s;
-    color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     &:hover{
         transform: translateY(-5px);
         color: #6e5494;
@@ -135,8 +135,8 @@ const GitHubIcon = styled(FontAwesomeIcon)`
 const MaltIcon = styled(FontAwesomeIcon)`
     margin-left: -3px;
     transition: all 0.5s;
-    color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     &:hover{
         transform: translateY(-5px);
         color: #FC5655;

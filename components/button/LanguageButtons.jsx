@@ -11,8 +11,8 @@ function LanguageButton() {
 
     return (
         <SelectButton>
-            <ButtonFr isDarkMode={theme === 'dark'} onClick={() => changeLanguage('fr')}>FR 🇫🇷</ButtonFr>
-            <ButtonEn isDarkMode={theme === 'dark'} onClick={() => changeLanguage('en')}>EN 🇬🇧</ButtonEn>
+            <ButtonFr isdarkmode={theme === 'dark'} onClick={() => changeLanguage('fr')}>FR 🇫🇷</ButtonFr>
+            <ButtonEn isdarkmode={theme === 'dark'} onClick={() => changeLanguage('en')}>EN 🇬🇧</ButtonEn>
         </SelectButton>
     )
 }
@@ -30,9 +30,9 @@ const ButtonFr = styled.button`
     border-style: solid;
     cursor: pointer;
     background-color: ${({ isdarkmode }) =>
-        isdarkmode ? 'white' : 'white'};
+        isdarkmode ? 'black' : 'white'};
     color: ${({ isdarkmode }) =>
-        isdarkmode ? 'black' : 'black'};
+        isdarkmode ? 'white' : 'black'};
 `
 
 const ButtonEn = styled.button`

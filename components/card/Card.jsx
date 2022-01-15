@@ -6,22 +6,22 @@ import Stack from '../stack/Stack'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Card({ image, title, description, icons, link }) {
-    const { theme, setTheme } = useTheme()
+    const { theme } = useTheme()
 
     return (
         <CardWrapper>
             <CardVisual src={image} />
-            <CardSwipe isDarkMode={theme === 'dark'}>
-                <IconSwipe1 icon={['fas', 'chevron-left']} isDarkMode={theme === 'dark'} />
+            <CardSwipe isdarkmode={theme === 'dark'}>
+                <IconSwipe1 icon={['fas', 'chevron-left']} isdarkmode={theme === 'dark'} />
                 <IconSwipe2 icon={['fas', 'chevron-left']} />
-                <TextSwipe isDarkMode={theme === 'dark'}>Swipe left to watch the next project</TextSwipe>
+                <TextSwipe isdarkmode={theme === 'dark'}>Swipe left to watch the next project</TextSwipe>
             </CardSwipe>
             <CardTitle>{title}</CardTitle>
             <Stack
                 title={"Description"}
                 content={description}
             />
-            <Link href={link} isDarkMode={theme === 'dark'}>Access to repository GitHub</Link>
+            <Link href={link} isdarkmode={theme === 'dark'}>Access to repository GitHub</Link>
         </CardWrapper>
     )
 }
@@ -45,14 +45,14 @@ const CardSwipe = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+  background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
   width: 100%;
   height: 30px;
 `
 const IconSwipe1 = styled(FontAwesomeIcon)`
-  color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+  color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
 `
 
 const IconSwipe2 = styled(FontAwesomeIcon)`
@@ -61,8 +61,8 @@ const IconSwipe2 = styled(FontAwesomeIcon)`
 `
 
 const TextSwipe = styled.p`
-    color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
     font-family: Raleway;
     font-size: 10px;
     margin-right: 10px;
@@ -88,25 +88,25 @@ const Link = styled.a`
     font-weight: bold;
     text-decoration: none;
     border: 1px solid;
-    border-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    border-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     padding: 15px;
     border-radius: 3px;
-    color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     background-color: transparent;
     align-items: center;
     cursor: pointer;
     transition: 0.08s ease-in;
     :hover{
-        color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+        color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
     }
     :before{
         content: '';
         position: absolute;
-        background: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+        background: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
         bottom: 0;
         left: 0;
         top: 0;

@@ -3,16 +3,25 @@ import { createGlobalStyle } from 'styled-components'
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes'
 import '../style/style.css'
+import { useEffect } from 'react';
+import { useTheme } from 'next-themes'
+
 
 const GlobalStyle = createGlobalStyle`
   :root {
     --fg: #000;
     --bg: #fff;
+    a, p, svg{
+      color: black;
+    }
   }
 
   [data-theme="dark"] {
     --fg: #fff;
     --bg: #000;
+    a, p, svg{
+      color: white;
+    }
   }
 
   html,
@@ -25,14 +34,15 @@ const GlobalStyle = createGlobalStyle`
   body{
     margin: 0;
   }
-
-  @font-face {
-    font-family: 'Raleway-Regular';
-    src: url('../style/assets/fonts/Raleway/Raleway-Regular.ttf') format('truetype');
-  }
 `
 
 function MyApp({ Component, pageProps }) {
+  const { theme } = useTheme()
+
+  useEffect(() => {
+    console.log('THEME', theme)
+  }, [theme])
+
   return (
     <>
       <Head>

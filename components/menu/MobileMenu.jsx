@@ -34,30 +34,30 @@ function MobileMenu() {
     return (
         <>
             <MenuButton ref={ref} isdarkmode={theme === 'dark'} isOpen={sideBar === true} onClick={showSideBar}>
-                <div isdarkmode={theme === 'dark'} />
-                <div isdarkmode={theme === 'dark'} />
-                <div isdarkmode={theme === 'dark'} />
+                <div />
+                <div />
+                <div />
             </MenuButton>
-            <NavLine isDarkMode={theme === 'dark'} isOpen={sideBar === true}>
+            <NavLine isdarkmode={theme === 'dark'} isOpen={sideBar === true}>
                 <Content>
                     <Link href="/">
                         <LinkContent>
-                            <Number>01</Number><Line isDarkMode={theme === 'dark'} /><Title>Home</Title>
+                            <Number>01</Number><Line isdarkmode={theme === 'dark'} /><Title>Home</Title>
                         </LinkContent>
                     </Link>
                     <Link href="/work">
                         <LinkContent>
-                            <Number>02</Number><Line isDarkMode={theme === 'dark'} /><Title>Work</Title>
+                            <Number>02</Number><Line isdarkmode={theme === 'dark'} /><Title>Work</Title>
                         </LinkContent>
                     </Link>
                     <Link href="/about">
                         <LinkContent>
-                            <Number>03</Number><Line isDarkMode={theme === 'dark'} /><Title>About</Title>
+                            <Number>03</Number><Line isdarkmode={theme === 'dark'} /><Title>About</Title>
                         </LinkContent>
                     </Link>
                     <Link href="/contact">
                         <LinkContent>
-                            <Number>04</Number><Line isDarkMode={theme === 'dark'} /><Title>Contact</Title>
+                            <Number>04</Number><Line isdarkmode={theme === 'dark'} /><Title>Contact</Title>
                         </LinkContent>
                     </Link>
                     <LanguageButtons />
@@ -112,8 +112,8 @@ const MenuButton = styled.div`
 const NavLine = styled.nav`
     display: flex;
     z-index: -1;
-    background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'black' : 'white'};
+    background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'black' : 'white'};
     width: 100%;
     height: 100vh;
     left: 0;
@@ -121,7 +121,7 @@ const NavLine = styled.nav`
     bottom: 0;
     position: fixed;
     transition: transform 0.5s ease-in-out;
-    transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-101%)"};
+    transform: ${({ isOpen }) => isOpen ? "translateX(0)" : "translateX(-120%)"};
 `
 
 const Content = styled.div`
@@ -141,8 +141,8 @@ const LinkContent = styled.div`
 `
 
 const Line = styled.div`
-    background-color: ${({ isDarkMode }) =>
-        isDarkMode ? 'white' : 'black'};
+    background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     width: 1px;
     height: 30px;
     margin-left: 20px;

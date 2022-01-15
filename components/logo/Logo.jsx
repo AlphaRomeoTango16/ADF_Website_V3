@@ -31,7 +31,7 @@ export default Logo
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 80px;
 `
 
 const FirstGroup = styled.div`
