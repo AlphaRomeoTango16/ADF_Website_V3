@@ -21,6 +21,13 @@ function Card({ image, title, description, icons, link }) {
                 title={"Description"}
                 content={description}
             />
+            <Stack
+                title={"Stack"}
+                content={
+                    icons.map((icon, index) =>
+                        <Icon key={index} src={icon} alt="icon" />
+                    )}
+            />
             <Link href={link} isdarkmode={theme === 'dark'}>Access to repository GitHub</Link>
         </CardWrapper>
     )
@@ -37,7 +44,7 @@ Card.propTypes = {
 export default Card
 
 const CardWrapper = styled.div`
-    height: 500px;
+    height: 100%;
   }
 `
 
@@ -117,4 +124,14 @@ const Link = styled.a`
     :hover:before{
         right: 0;
     }
+`
+
+const Icon = styled.img`
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
 `

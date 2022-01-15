@@ -50,7 +50,7 @@ const Page = styled.div`
 const Body = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 80px;
   height: 100%;
 `
 const Title = styled.div`

@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components'
 import { appWithTranslation } from 'next-i18next';
 import { ThemeProvider } from 'next-themes'
 import '../style/style.css'
-import { useEffect } from 'react';
 import { useTheme } from 'next-themes'
 
 
@@ -38,10 +37,6 @@ const GlobalStyle = createGlobalStyle`
 
 function MyApp({ Component, pageProps }) {
   const { theme } = useTheme()
-
-  useEffect(() => {
-    console.log('THEME', theme)
-  }, [theme])
 
   return (
     <>

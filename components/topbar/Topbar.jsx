@@ -44,7 +44,6 @@ const Content = styled.div`
 `
 
 const Line = styled.div`
-    padding-top: 20px;
     width: 100%;
     border-top: 1px solid;
     border-color: ${({ isdarkmode }) =>

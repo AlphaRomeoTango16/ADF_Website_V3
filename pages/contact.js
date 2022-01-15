@@ -35,12 +35,13 @@ const Page = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
 `
 const Body = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 80px;
   width: 100%;
   height: 100%;
 `

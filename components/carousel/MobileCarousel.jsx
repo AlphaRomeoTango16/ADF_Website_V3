@@ -40,4 +40,5 @@ export default MobileCarousel
 const MobileCarouselContainer = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
 `
