@@ -11,18 +11,22 @@ import { faMalt } from '../style/assets/myicons/index'
 import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
 
+import { useTheme } from 'next-themes'
+
 library.add(fab, faMalt, faSun, faMoon, faChevronLeft)
 
 dom.watch();
 
 export default function Work() {
+  const { theme } = useTheme()
+
   return (
     <Page>
       <Head>
         <title>| Work</title>
       </Head>
       <Topbar />
-      <Body>
+      <Body isdarkmode={theme === 'dark'}>
         <MobileCarousel />
       </Body>
       <Footer />
@@ -44,4 +48,6 @@ const Body = styled.div`
   margin-top: 80px;
   width: 100%;
   height: 100%;
+  background: ${({ isdarkmode }) =>
+    isdarkmode ? 'black' : 'white'};
 `

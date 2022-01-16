@@ -13,19 +13,24 @@ import { faSun } from '@fortawesome/free-solid-svg-icons'
 import { faMoon } from '@fortawesome/free-solid-svg-icons'
 import LanguageButton from '../components/button/LanguageButtons';
 
+import { useTheme } from 'next-themes'
+
+
 library.add(fab, faMalt, faSun, faMoon)
 
 dom.watch();
 
 export default function Home() {
+  const { theme } = useTheme()
   const { t } = useTranslation('common');
+
   return (
     <Page>
       <Head>
         <title>| Home</title>
       </Head>
       <Topbar />
-      <Body>
+      <Body isdarkmode={theme === 'dark'}>
         <Title>{t("Fullstack developer")}</Title>
         <LanguageButton />
       </Body>
@@ -52,6 +57,8 @@ const Body = styled.div`
   flex-direction: column;
   margin-top: 80px;
   height: 100%;
+  background: ${({ isdarkmode }) =>
+    isdarkmode ? 'black' : 'white'};
 `
 const Title = styled.div`
   font-family: PlayfairDisplay;

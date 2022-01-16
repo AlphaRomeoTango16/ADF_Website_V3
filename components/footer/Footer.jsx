@@ -13,9 +13,9 @@ function Footer() {
                 <SliderSwitch isdarkmode={theme === 'dark'} data-fa-icon={theme === 'light' ? "" : ""}></SliderSwitch>
             </LabelSwitch>
             <LogoContainer>
-                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LinkedInIcon icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn" /></IconMe>
-                <IconMe href="https://github.com/AlphaRomeoTango16"><GitHubIcon icon={['fab', 'github']} style={styleIcon} title="GitHub" /></IconMe>
-                <IconMe href="https://www.malt.fr/profile/ardellafaille"><MaltIcon icon={['fab', 'malt']} style={styleIcon} title="Malt" /></IconMe>
+                <IconMe href="https://www.linkedin.com/in/arthur-della-faille-46a2815a/"><LinkedInIcon isdarkmode={theme === 'dark'} icon={['fab', 'linkedin']} style={styleIcon} title="LinkedIn" /></IconMe>
+                <IconMe href="https://github.com/AlphaRomeoTango16"><GitHubIcon isdarkmode={theme === 'dark'} icon={['fab', 'github']} style={styleIcon} title="GitHub" /></IconMe>
+                <IconMe href="https://www.malt.fr/profile/ardellafaille"><MaltIcon isdarkmode={theme === 'dark'} icon={['fab', 'malt']} style={styleIcon} title="Malt" /></IconMe>
             </LogoContainer>
             <CopyrightLine>Copyright ©2021 | All rights reserved, Arthur della Faille.</CopyrightLine>
         </FooterContainer>
@@ -29,10 +29,11 @@ const FooterContainer = styled.footer`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 `
 
 const Line = styled.div`
-    padding-top: 20px;
+    padding-top: 30px;
     width: 100%;
     border-top: 1px solid;
     border-color: ${({ isdarkmode }) =>
@@ -46,7 +47,7 @@ const CopyrightLine = styled.div`
 `
 
 const LogoContainer = styled.div`
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     display: flex;
     justify-content: space-between;
     width: 90px;

@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
+import { useTheme } from 'next-themes'
 import DeployButton from '../button/DeployButton'
 
 function Stack({ title, content }) {
+    const { theme } = useTheme()
     const [informations, setInformations] = useState(false);
     const showInformations = () => setInformations(!informations)
     return (
@@ -13,12 +15,12 @@ function Stack({ title, content }) {
                     {title}
                     <DeployButton />
                 </Title>
-                <Line isOpen={informations === true} />
+                <Line isdarkmode={theme === 'dark'} isOpen={informations === true} />
             </StackTitle>
             <ContentContainer>
-                <StackIcon isOpen={informations === true}>
+                <StackContent isdarkmode={theme === 'dark'} isOpen={informations === true}>
                     {content}
-                </StackIcon>
+                </StackContent>
             </ContentContainer>
         </StackContainer>
     )
@@ -34,10 +36,12 @@ Stack.propTypes = {
 const StackContainer = styled.div`
     display: flex;
     flex-direction: column;
+    width: 100%;
 `
 
 const Line = styled.div`
-    background-color: black;
+    background-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
     width: ${({ isOpen }) => isOpen ? "100%" : "0%"};
     height: 1px;
 `
@@ -65,16 +69,18 @@ const ContentContainer = styled.div`
     position: relative;
     overflow: hidden;
     height: 100px;
+    width: 100%;
 `
 
-const StackIcon = styled.div`
+const StackContent = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
     position: absolute;
     padding: 10px 10px 0px 10px;
-    border-bottom: 1px solid black;
-    height: 30px;
+    border-bottom: 1px solid;
+    border-color: ${({ isdarkmode }) =>
+        isdarkmode ? 'white' : 'black'};
+    height: 100px;
     transition: transform 1s;
     transform: ${({ isOpen }) => isOpen ? "translateY(0px)" : "translateY(-132px)"};
 `

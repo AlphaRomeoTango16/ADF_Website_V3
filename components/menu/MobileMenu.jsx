@@ -129,6 +129,7 @@ const Content = styled.div`
     flex-direction: column;
     align-items: left;
     justify-content: flex-start;
+    width: 100%;
     margin-top: 90px;
 `
 
@@ -144,19 +145,20 @@ const Line = styled.div`
     background-color: ${({ isdarkmode }) =>
         isdarkmode ? 'white' : 'black'};
     width: 1px;
-    height: 30px;
+    height: 40px;
     margin-left: 20px;
     margin-right: 20px;
 `
 
 const Title = styled.p`
     font-family: PlayfairDisplay;
-    font-size: 30px;
+    font-size: 45px;
     margin: 0;
 `
 
 const Number = styled.p`
     font-family: Inconsolata;
-    font-size: 40px;
+    font-weight: 100;
+    font-size: 60px;
     margin: 0;
 `

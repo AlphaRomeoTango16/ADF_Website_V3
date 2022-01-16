@@ -11,7 +11,7 @@ const projectList = [
     {
         "title": "Groupomania",
         "image": Groupomania,
-        "description": "Groupomania",
+        "description": "Le projet consiste à construire un réseau social interne pour les employés de Groupomania. Le but de cet outil est de faciliter les interactions entre collègues.",
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },

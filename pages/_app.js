@@ -7,22 +7,6 @@ import { useTheme } from 'next-themes'
 
 
 const GlobalStyle = createGlobalStyle`
-  :root {
-    --fg: #000;
-    --bg: #fff;
-    a, p, svg{
-      color: black;
-    }
-  }
-
-  [data-theme="dark"] {
-    --fg: #fff;
-    --bg: #000;
-    a, p, svg{
-      color: white;
-    }
-  }
-
   html,
   body,
   body > div:first-child,
@@ -44,7 +28,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalStyle />
-      <ThemeProvider>
+      <ThemeProvider isdarkmode={theme === 'dark'}>
         <Component {...pageProps} />
       </ThemeProvider>
     </>

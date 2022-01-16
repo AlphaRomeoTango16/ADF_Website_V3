@@ -28,7 +28,10 @@ function Card({ image, title, description, icons, link }) {
                         <Icon key={index} src={icon} alt="icon" />
                     )}
             />
-            <Link href={link} isdarkmode={theme === 'dark'}>Access to repository GitHub</Link>
+
+            <LinkContainer>
+                <Link href={link} isdarkmode={theme === 'dark'}>Access to repository GitHub</Link>
+            </LinkContainer>
         </CardWrapper>
     )
 }
@@ -83,6 +86,10 @@ const CardTitle = styled.div`
   font-family: Raleway;
   font-weight: bold;
   font-size: 20px;
+  margin-top: 20px;
+`
+
+const LinkContainer = styled.div`
   margin-top: 20px;
 `
 
