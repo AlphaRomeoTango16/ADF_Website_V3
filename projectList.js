@@ -5,7 +5,7 @@ import CssIcon from './style/assets/logo/css.svg'
 import JavascriptIcon from './style/assets/logo/javascript.svg'
 import NodeIcon from './style/assets/logo/nodejs.svg'
 
-// import iconList from './style/assets/logo/index'
+import iconList from './style/assets/logo/index'
 
 const projectList = [
     {
@@ -13,6 +13,9 @@ const projectList = [
         "image": Groupomania,
         "description": "Le projet consiste à construire un réseau social interne pour les employés de Groupomania. Le but de cet outil est de faciliter les interactions entre collègues.",
         "iconsList": [VueIcon, HtmlIcon, CssIcon, JavascriptIcon, NodeIcon],
+        // "front": [iconList],
+        // "back": [iconList],
+        // "tools": [iconList],
         "link": "https://github.com/AlphaRomeoTango16/Groupomania"
     },
     {

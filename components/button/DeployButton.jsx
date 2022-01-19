@@ -1,21 +1,23 @@
 import styled from 'styled-components'
-import { useState } from 'react'
+import PropTypes from 'prop-types'
 import { useTheme } from 'next-themes'
 
-function DeployButton() {
+function DeployButton({ informations }) {
     const { theme } = useTheme()
-    const [expand, setExpand] = useState(true);
-    const showExpension = () => setExpand(!expand);
 
     return (
-        <CircleContainer isdarkmode={theme === 'dark'} isOpen={expand === true} onClick={showExpension}>
+        <CircleContainer isdarkmode={theme === 'dark'} isOpen={informations === true}>
             <LineOne isdarkmode={theme === 'dark'} />
-            <LineTwo isdarkmode={theme === 'dark'} isOpen={expand === true} />
+            <LineTwo isdarkmode={theme === 'dark'} isOpen={informations === true} />
         </CircleContainer>
     )
 }
 
 export default DeployButton
+
+DeployButton.propTypes = {
+    informations: PropTypes.bool
+}
 
 const CircleContainer = styled.div`
     display: flex;
@@ -49,5 +51,5 @@ const LineTwo = styled.div`
     transform-origin: center;
     transition: all 0.3s linear;
     transform: ${({ isOpen }) =>
-        isOpen ? 'rotate(90deg)' : 'rotate(0deg)'};
+        isOpen ? 'rotate(0deg)' : 'rotate(90deg)'};
 `

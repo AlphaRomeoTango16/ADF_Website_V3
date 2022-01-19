@@ -2,7 +2,9 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import Image from 'next/image'
 import { useTheme } from 'next-themes'
-import Stack from '../stack/Stack'
+// import Stack from '../stack/Stack'
+import NewStackText from '../stack/NewStackText'
+import NewStackIcon from '../stack/NewStackIcon'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Card({ image, title, description, icons, link }) {
@@ -17,18 +19,14 @@ function Card({ image, title, description, icons, link }) {
                 <TextSwipe isdarkmode={theme === 'dark'}>Swipe left to watch the next project</TextSwipe>
             </CardSwipe>
             <CardTitle>{title}</CardTitle>
-            <Stack
+            <NewStackText
                 title={"Description"}
                 content={description}
             />
-            <Stack
+            <NewStackIcon
                 title={"Stack"}
-                content={
-                    icons.map((icon, index) =>
-                        <Icon key={index} src={icon} alt="icon" />
-                    )}
+                iconsList={icons}
             />
-
             <LinkContainer>
                 <Link href={link} isdarkmode={theme === 'dark'}>Access to repository GitHub</Link>
             </LinkContainer>
@@ -37,7 +35,7 @@ function Card({ image, title, description, icons, link }) {
 }
 
 Card.propTypes = {
-    image: PropTypes.string.isRequired,
+    image: PropTypes.object.isRequired,
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     icons: PropTypes.array.isRequired,
@@ -133,12 +131,12 @@ const Link = styled.a`
     }
 `
 
-const Icon = styled.img`
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
-  }
-`
+// const Icon = styled.img`
+//     width: 50px;
+//     height: 50px;
+//     margin-right: 10px;
+//     background-color: white;
+//     padding: 10px;
+//     border-radius: 10px;
+//   }
+// `

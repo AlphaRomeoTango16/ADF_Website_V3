@@ -31,7 +31,7 @@ function MobileCarousel() {
           )
         })}
       </Swiper>
-    </MobileCarouselContainer>
+    </MobileCarouselContainer >
   )
 }
 
