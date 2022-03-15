@@ -57,8 +57,6 @@ const Body = styled.div`
   flex-direction: column;
   margin-top: 80px;
   height: 100%;
-  background: ${({ isdarkmode }) =>
-    isdarkmode ? 'black' : 'white'};
 `
 const Title = styled.div`
   font-family: PlayfairDisplay;

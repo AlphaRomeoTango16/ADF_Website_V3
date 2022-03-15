@@ -48,6 +48,4 @@ const Body = styled.div`
   margin-top: 80px;
   width: 100%;
   height: 100%;
-  background: ${({ isdarkmode }) =>
-    isdarkmode ? 'black' : 'white'};
 `
